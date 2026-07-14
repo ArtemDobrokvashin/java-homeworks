@@ -1,3 +1,4 @@
+package Hard1;
 
 public class Card {
     private final String suit;
