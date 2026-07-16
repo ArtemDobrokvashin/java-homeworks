@@ -14,7 +14,6 @@ public class Field {
     }
 
     public boolean placeShip(int size, int row, int col, boolean isVertical) {
-        // Проверка границ
         if (isVertical) {
             if (row + size > 10) return false;
         } else {
