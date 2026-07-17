@@ -23,6 +23,5 @@ public class Middle4 {
                 break;
             }
         }
-
     }
 }
