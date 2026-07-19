@@ -1,7 +1,5 @@
 package module7.hard1;
 
-import hard1.Word;
-import middle1.Player;
 
 public class Game {
     private Word word;
@@ -20,7 +18,7 @@ public class Game {
         System.out.println("Добро пожаловать в игру 'Виселица'!");
         System.out.println("Игрок 1, загадайте слово (второй игрок не подглядывает!):");
 
-        String secretWord = wordSetter.in();
+        String secretWord = wordSetter.enterWord();
         this.word = new Word(secretWord);
 
         while (!word.isGuessed() && wrongAttempts < MAX_ATTEMPTS) {
