@@ -1,6 +1,5 @@
 package module7.hard1;
 
-
 public class Game {
     private Word word;
     private Player wordSetter;
@@ -18,10 +17,11 @@ public class Game {
         System.out.println("Добро пожаловать в игру 'Виселица'!");
         System.out.println("Игрок 1, загадайте слово (второй игрок не подглядывает!):");
 
-        String secretWord = wordSetter.enterWord();
+        String secretWord = wordSetter.provideWord();
         this.word = new Word(secretWord);
 
         while (!word.isGuessed() && wrongAttempts < MAX_ATTEMPTS) {
+            drawGallows();
             System.out.println("\nТекущее слово: " + word.getDisplay());
             System.out.println("Ошибок: " + wrongAttempts + "/" + MAX_ATTEMPTS);
             System.out.println("Игрок 2, введите букву:");
@@ -31,12 +31,12 @@ public class Game {
             if (word.openLetter(guess)) {
                 System.out.println("Есть такая буква!");
             } else {
+
                 wrongAttempts++;
                 System.out.println("Нет такой буквы!");
             }
         }
 
-        // Объявление результата
         if (word.isGuessed()) {
             guesser.incrementScore();
             System.out.println("\nПоздравляем! Игрок 2 победил!");
@@ -46,9 +46,69 @@ public class Game {
             System.out.println("Загаданное слово было: " + word.getHiddenWord());
         }
 
-        // Вывод счёта
         System.out.println("\nСчёт:");
         System.out.println("Игрок 1: " + wordSetter.getScore());
         System.out.println("Игрок 2: " + guesser.getScore());
+    }
+
+    private void drawGallows() {
+        switch (wrongAttempts) {
+            case 0:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("      |");
+                System.out.println("      |");
+                System.out.println("      |");
+                System.out.println("      |");
+                break;
+            case 1:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println("      |");
+                System.out.println("      |");
+                System.out.println("      |");
+                break;
+            case 2:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println("  |   |");
+                System.out.println("      |");
+                System.out.println("      |");
+                break;
+            case 3:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println(" /|   |");
+                System.out.println("      |");
+                System.out.println("      |");
+                break;
+            case 4:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println(" /|\\  |");
+                System.out.println("      |");
+                System.out.println("      |");
+                break;
+            case 5:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println(" /|\\  |");
+                System.out.println(" /    |");
+                System.out.println("      |");
+                break;
+            case 6:
+                System.out.println("  +---+");
+                System.out.println("  |   |");
+                System.out.println("  O   |");
+                System.out.println(" /|\\  |");
+                System.out.println(" / \\  |");
+                System.out.println("      |");
+                break;
+        }
     }
 }

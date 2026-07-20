@@ -1,4 +1,4 @@
-package module7.middle4;
+package module7.hard1;
 
 
 public class Frog {
