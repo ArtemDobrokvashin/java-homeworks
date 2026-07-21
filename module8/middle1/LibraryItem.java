@@ -1,4 +1,4 @@
-package middle1;
+
 
 public abstract class LibraryItem {
     public abstract String getTitle();

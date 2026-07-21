@@ -1,4 +1,3 @@
-package middle1;
 
 public class ScientificPaper extends LibraryItem{
 

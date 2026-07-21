@@ -1,4 +1,3 @@
-package middle1;
 
 import java.util.ArrayList;
 
@@ -60,6 +59,20 @@ public class Library {
         for (LibraryItem item : items) {
             String status = item.isAvailable() ? "в наличии" : "выдан";
             System.out.println("- " + item.getTitle() + " (" + item.getAuthor() + ") — " + status);
+        }
+    }
+
+    public void returnItem(LibraryItem item) {
+        if (items.contains(item)) {
+            LibraryItem realItem = items.get(items.indexOf(item));
+            if (!realItem.isAvailable()) {
+                realItem.setAvailable(true);
+                System.out.println("Возвращено: " + realItem.getTitle() + " " + realItem.getAuthor());
+            } else {
+                System.out.println(realItem.getTitle() + " уже в наличии");
+            }
+        } else {
+            System.out.println("Этот материал не принадлежит библиотеке");
         }
     }
 }
