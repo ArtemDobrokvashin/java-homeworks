@@ -1,3 +1,5 @@
+package module9.middle1;
+
 public class Middle1 {
     public static void main(String[] args) {
         Bank bank = new Bank();
