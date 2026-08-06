@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/hard1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hard2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hard3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/easy2" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
